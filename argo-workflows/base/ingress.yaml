@@ -8,6 +8,11 @@ metadata:
     ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
+  defaultBackend:
+    service:
+      name: argo-server
+      port:
+        number: 80
   rules:
   - http:
       paths:
